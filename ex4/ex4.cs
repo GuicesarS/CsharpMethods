@@ -6,24 +6,23 @@ media e exibido no console. Sugestão para chamar o método:
 static double CalcularMedia(double[] numeros) */
 
 using System;
- public class Program 
- {
-   static void testenum()
-   {
-      int valor=0;
-      Console.WriteLine("Informe um valor :");
-      valor=Convert.ToInt32(Console.ReadLine());
-
-      if (valor<0)
-         Console.WriteLine("VALOR NEGATIVO");
-         else if (valor==0)
-         Console.WriteLine("VALOR NULO");
-         else
-         Console.WriteLine("VALOR POSITIVO");
-   
-   }
-    public static void Main (string []args)
+class Program
+{
+    static void Main(string[] args)
     {
-        testenum();
+        double[] numeros = { 8.5, 9.0, 7.5, 6.0, 8.0 };
+        double media = CalcularMedia(numeros);
+        Console.WriteLine("A média dos números é: " + media);
     }
- }
+
+    static double CalcularMedia(double[] numeros)
+   {
+        double soma = 0;
+        for(int i=0;i<5;i++)
+	     {
+	      	soma+=numeros[i];
+     	}
+     	return soma/5;
+   }
+}
+
